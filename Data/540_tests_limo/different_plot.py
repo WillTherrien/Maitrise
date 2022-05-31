@@ -10,25 +10,7 @@ import tf
 import string
 import os #for file management make directory
 import numpy as np
-import xlrd
-import xlwt
-from xlwt import Workbook
-from xlutils.copy import copy
-import random
 import matplotlib.pyplot as plt
-
-# Open workbook
-workbook = xlrd.open_workbook('/home/ubuntu/Desktop/racecar_tests.xlsx')
-# Choose sheet
-xl_sheet = workbook.sheet_by_index(0)
-# Read particular columns of a sheet
-col_vi = xl_sheet.col(0) #Attribut la colone 1 a la vitesse initiale
-col_mu = xl_sheet.col(1) #Attribut la colone 2 au coef de friction
-col_m  = xl_sheet.col(2) #Attribut la colone 3 a la masse
-col_l  = xl_sheet.col(3) #Attribut la colone 4 a la longueur du vehicule
-col_cg = xl_sheet.col(4) #Attribut la colone 5 a la position du centre de masse
-col_u  = xl_sheet.col(5) #Attribut la colone 6 a la manoeuvre a faire
-
 
 
 #verify correct input arguments: 1 or 2
@@ -53,15 +35,10 @@ else:
 	sys.exit(1)
 
 count = 0
-count2 = 0
 X_list_v = []
 Y_list_v = []
 X_list_l = []
 Y_list_l = []
-mu_list = []
-vi_list = []
-u_list = []
-l_list = []
 bagNumber_list = []
 
 for bagFile in listOfBagFiles:
@@ -73,23 +50,7 @@ for bagFile in listOfBagFiles:
 	bagName = bag.filename
 	bagNumber = ''.join([n for n in bagName if n.isdigit()])
 
-	# Read params of the test in excel sheet according to bag number
-	v_i = col_vi[int(bagNumber)].value
-	mu  = col_mu[int(bagNumber)].value
-	m   = col_m[int(bagNumber)].value
-	l   = col_l[int(bagNumber)].value
-	cg  = col_cg[int(bagNumber)].value
-	u   = col_u[int(bagNumber)].value
-
-	#Geometrical params of the vehicle
-	width = 0.28
-	b_length = 0.24
-	diff_length = l-0.35
-	f_length = 0.32+diff_length
-	g = 9.81
-
 	#get list of topics from the bag
-	listOfTopics = []
 	encd_pos = []
 	t_encd = []
 	X_vic = []
@@ -199,9 +160,7 @@ for bagFile in listOfBagFiles:
 	theta_l_real.append(0)
 	for i in range(len(X_las)):
 		if (X_las[i]>X_las_ini):
-			#X_l_real.append(X_las[i]-X_las_ini)
-			#Y_l_real.append(Y_las[i]-Y_las_ini)
-			#theta_l_real.append(theta_las[i]-theta_las_ini)
+
 			X_l_real.append((X_las[i]-X_las_ini)*np.cos(theta_las_ini)+(Y_las[i]-Y_las_ini)*np.sin(theta_las_ini))
 			Y_l_real.append(-(X_las[i]-X_las_ini)*np.sin(theta_las_ini)+(Y_las[i]-Y_las_ini)*np.cos(theta_las_ini))
 			theta_l_real.append(theta_las[i]-theta_las_ini)
