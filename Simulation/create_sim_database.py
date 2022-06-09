@@ -3,7 +3,7 @@ import numpy as np
 
 
 # Create a new workbook
-wb = xlsxwriter.Workbook('/home/ubuntu/Desktop/pi_theorem_valid/excel_data/v8_data.xlsx')
+wb = xlsxwriter.Workbook('/sim_database/data.xlsx')
 sheet = wb.add_worksheet('Sheet1')	
 sheet.write(0,0,"v_i")
 sheet.write(0,1,"l")

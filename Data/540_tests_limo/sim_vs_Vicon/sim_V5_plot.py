@@ -242,7 +242,7 @@ slip_max = 0.02
     
     
 # Read params of the test in excel sheet according to bag number
-u   = u*0.1*g
+u   = a_u
 width = 0.28
 
     
@@ -318,7 +318,7 @@ while (v_x>0):
         else:
             Fy_r = -Fn_r*mu
             
-    print(Fx_r)
+  
     
 
             
