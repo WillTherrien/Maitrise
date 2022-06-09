@@ -33,5 +33,9 @@
 ---
 ## Simulation
 
-- `create_sim_database.py` code creates a database in an Excel file with 16 500 points with different combinations of manoeuvers and environments with their simulated outcome using a dynamic bicycle simulator. 
+- `create_sim_database.py` code creates a database in an Excel file with 16 500 points with different combinations of manoeuvers and environments with their simulated outcome using a dynamic bicycle simulator. The excel file is saved in the **sim_database** folder.
 - `plot_sim.py` code can plot the simulated trajectory of a specific car doing a specific manoeuver in a given environment.
+
+## Images
+
+This folder contains the images used in this README file.
