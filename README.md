@@ -41,8 +41,21 @@
 
 ---
 ## Learning
-
-**excel_data**
+- `XGBoost_dyn_FIT.py` python code
+<p align="center">
+  <img src="/Images/XGBoostFIT.png" width="600">
+</p>
+<p align="center">
+  <img src="/Images/XGBoostFIT2.png" width="400">
+</p>
+- `XGBoost_MAPE.py` python code
+<p align="center">
+  <img src="/Images/MAPE.png" width="600">
+</p>
+- `XGBoost_importance.py` python code
+<p align="center">
+  <img src="/Images/Importance.png" width="600">
+</p>
 
 ---
 ## Simulation
